@@ -1,0 +1,54 @@
+==== ¿Que es el redux? ====
+---- No es mas que un simple patron para el manejo de la informacion
+---- Nos permite saber informacion como cual es el estado de la aplicacion en un momento
+---- ¿Como cambio la informacion??
+---- ¿quien cambió alguna variable?
+---- ¿Como se encuentra determinada variable?
+
+==== IDEAS PRINCIPALES ====
+---- Toda la data de la aplicacion de la aplicasion se encuentra en una estructura 
+---- previamente definida, antes de que se haga la mutacion de la informacion ya sabemos que es lo que se va a almacenar
+---- en la misma.
+
+---- Toda la informacion se encontrara almacenada en un unico lugar y ese lugar lo llamaremos STORE
+---- es el que contiene la informacion de la informacion
+
+---- El STORE jamas se modifica de forma directa
+
+---- Interacciones de usuario y o codigo dispara acciones que describen que sucedio
+
+---- el valor actual de la informacion de la aplicación se llama STATE
+
+---- Un nuevo estado es creado en base a la combinación del viejo estado y una accion 
+---- atravez de una función llamada reducer.
+
+
+==== FLUJO DE INFORMACIÓN ====
+---- EL Reducer el cual es una accion toma el viejo estado
+---- y la accion que describe que es lo que se va a hacer con ese estado y produce un nuevo estado
+---- tal cual como en la fig1
+
+
+==== Una Accion ====
+---- Es la unica fuente de informacion que se envia por intereacciones de usuario o programa
+---- Tiene unicamente dos propiedades
+---- Type = Describe que hace la accion  => Completar Tarea  (Obligatorio)
+---- payload = Menor cantidad posible de informacion  (No es oblgatoria)
+
+
+==== REDUCER ====
+---- Un reducer no es mas que una funcion que recibe unicamente dos argumentos la accion y el oldState => estado actual
+---- y siempre debe retornar un estado
+
+
+==== STATE - STORE ====
+---- Es de solo lectura 
+---- nunca modificara el estate de forma directa
+---- hay funciones prohíbidads de javaScript
+---- para manipulacion directa de objetos
+
+==== STORE ====
+---- Un objeto que tiene las siguientes respondavilidades
+---- Permite la lectura del estado via getState()
+---- Permite crear un nuevo estado utilizando dispatch(action)
+---- Permite notificar los cambios de estado via subscribe()
