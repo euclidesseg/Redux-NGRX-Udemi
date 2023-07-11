@@ -1,3 +1,7 @@
 npm install -g ts-node
 npm install -g typescript
 Instalamos global para correr TS directamente en un proyecto de node 
+ejecutar con ts-node  app-1.ts
+
+==== Acciones Y Reducer Básico ====
+---- Accion describe lo que hara el reducer
