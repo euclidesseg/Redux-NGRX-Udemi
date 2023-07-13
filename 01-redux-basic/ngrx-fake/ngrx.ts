@@ -5,3 +5,11 @@ export interface Action{
     type: string; 
     payload?: any; 
 }
+
+// interfaz para reducer
+export interface Reducer<T> { // retornara siempre el mismo tipo que reciba 
+    (state: T, action: Action):T 
+}
+
+// Nota: notemos que la intrfaz de Reducer es casi igual que la Action 
+// solo que uno de sus atributos es una funcion que recibe un estado y una accion 

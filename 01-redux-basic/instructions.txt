@@ -4,4 +4,21 @@ Instalamos global para correr TS directamente en un proyecto de node
 ejecutar con ts-node  app-1.ts
 
 ==== Acciones Y Reducer Básico ====
----- Accion describe lo que hara el reducer
+---- Accion describe lo que hara el reducer y si la accion tiene un payload significa que el reducer
+---- va a operar con esa accion
+---- El reducer recibe un estado y la accion
+
+
+==== Store =====
+---- El store es como una especie de almacen, lo que va hacer es brindando 
+---- la opcion de almacenar el estado actual de la aplicacion
+---- ademas el store es el que me permite obtener el stado actual
+---- y ademas me permite despachar una accion.
+---- creamos app-3.ts
+
+
+==== Suscribirnos al cambio state ====
+---- El store del redux cuando se realiza un cambio en el state nos permite ser notificados
+---- a travez de observables. 
+---- veremnos en este capitulo como suscribirnos a los cmbios del state. 
+---- creamos app-4.ts.

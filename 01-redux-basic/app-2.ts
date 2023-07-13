@@ -1,12 +1,12 @@
 import { decrementadorAction, dividirAction, incrementadorAction, multiplicarAction, resetAction } from "./contador/contador.action";
-import { reducer } from "./contador/contador.reducer";
+import { contadorReducer } from "./contador/contador.reducer";
 
 // usar el reducer
-console.log(reducer(10, incrementadorAction))
-console.log(reducer(10, decrementadorAction))
-console.log(reducer(10, multiplicarAction))
-console.log(reducer(10, dividirAction))
-console.log(reducer(10, resetAction))
+console.log(contadorReducer(10, incrementadorAction))
+console.log(contadorReducer(10, decrementadorAction))
+console.log(contadorReducer(10, multiplicarAction))
+console.log(contadorReducer(10, dividirAction))
+console.log(contadorReducer(10, resetAction))
 
 
 // el reducer siempre recivira el estado actual y la accion
