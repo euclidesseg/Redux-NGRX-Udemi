@@ -1,11 +1,12 @@
 // definicion del reducer
 
 import { Action } from "../ngrx-fake/ngrx";
+import { incrementadorAction } from "./contador.action";
 
 export function contadorReducer(state = 0, action : Action){
 
     switch(action.type){
-        case 'INCREMENTAR':
+        case incrementadorAction.type:
             return state += 1;
 
         case 'DECREMENTAR':

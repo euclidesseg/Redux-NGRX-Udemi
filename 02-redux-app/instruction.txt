@@ -1,0 +1,13 @@
+==== NGRX ====
+---- actualmente tenemos que todos los componentes estan enviando y recibiendo informacionentre si
+---- y de esta manera es dificil saber quien realmente dispara un evento.
+
+---- Para eso instalamos la libreria de ngrx que usaremos para manejar el estado del redux
+---- luego de creada en nuestro contador creamos un archivo que figurara como la accion
+---- luego el reductor o reducer que me recibira un estado inicial y una accion previamente definida
+
+---- ahora vamos a usarla en nuestro app.component.html y lo haremos usando un servicio que habilitamos cuando
+---- instalamos @Ngrx/store este servicio se llama store y se inyecta en el componente o servicio
+---- en donde vamos a despachar una accion generalmente en las metodos del componente se llama a metod que despacha una acccion
+
+---- 

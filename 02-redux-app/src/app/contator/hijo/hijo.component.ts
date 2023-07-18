@@ -18,4 +18,8 @@ export class HijoComponent {
     this.contador /= 2
     this.onCambioContador.emit(this.contador)
   }
+
+  onResetNieto(event: number){
+    this.onCambioContador.emit(event)
+  }
 }
