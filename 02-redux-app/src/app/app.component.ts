@@ -17,7 +17,9 @@ export class AppComponent {
   
   constructor(private store: Store<Appstate>){// necesito especificar que tipo de datos va a tener este store
     // nos suscribimos a los cambios del store
-    this.store.select('contador').subscribe((contador) => // el select me permitira traer un estado especifico en este caso el estado del contador
+    this.store.select('contador').subscribe((contador) => 
+    // el select me permitira traer un estado especifico en este caso el estado del contador
+    // y esto es gracias a que en nuestro modulo esta proveido  el storemodule con el nombre de contador
     { 
       console.log(contador)
       this.contador = contador

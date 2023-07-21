@@ -28,3 +28,8 @@
 
 
 ---- Luego de instalar storeDevTools la importamos en nuestro appmodule 
+
+
+==== Create reducer =====
+---- para esta seccion vamos a trabajar con un create reducer, este create reducer ya no trabaja enbase a 
+--- el switch si no a varios operadores de ngrx para hacerlo mas veloz 
