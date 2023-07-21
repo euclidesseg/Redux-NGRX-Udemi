@@ -10,6 +10,7 @@
 ---- instalamos @Ngrx/store este servicio se llama store y se inyecta en el componente o servicio
 ---- en donde vamos a despachar una accion generalmente en las metodos del componente se llama a metod que despacha una acccion
 
+<<<<<<< HEAD
 ---- Store Devtools ---- npm i @ngrx/store-devtools@15.0.0 --------
 ---- para manejar y visualizar el estado en una aplicacion podemos intalar esta extencion en 
 ---- el navegador y / o en el proyecto 
@@ -28,3 +29,6 @@
 
 
 ---- Luego de instalar storeDevTools la importamos en nuestro appmodule 
+=======
+---- 
+>>>>>>> ea145755acca45c99ef66291de5b090c2ce9859e
