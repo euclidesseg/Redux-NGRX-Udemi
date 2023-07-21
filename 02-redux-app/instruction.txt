@@ -1,0 +1,30 @@
+==== NGRX ====
+---- actualmente tenemos que todos los componentes estan enviando y recibiendo informacionentre si
+---- y de esta manera es dificil saber quien realmente dispara un evento.
+
+---- Para eso instalamos la libreria de ngrx que usaremos para manejar el estado del redux
+---- luego de creada en nuestro contador creamos un archivo que figurara como la accion
+---- luego el reductor o reducer que me recibira un estado inicial y una accion previamente definida
+
+---- ahora vamos a usarla en nuestro app.component.html y lo haremos usando un servicio que habilitamos cuando
+---- instalamos @Ngrx/store este servicio se llama store y se inyecta en el componente o servicio
+---- en donde vamos a despachar una accion generalmente en las metodos del componente se llama a metod que despacha una acccion
+
+---- Store Devtools ---- npm i @ngrx/store-devtools@15.0.0 --------
+---- para manejar y visualizar el estado en una aplicacion podemos intalar esta extencion en 
+---- el navegador y / o en el proyecto 
+---- Esto nos permite: 
+---- La extensión muestra el estado actual de la aplicación en un formato estructurado, 
+--------lo que te permite examinar cómo se organizan y almacenan los datos en la aplicación.
+
+---- Puedes retroceder y avanzar en el historial de acciones y ver cómo cambia el estado de la 
+--------aplicación en cada punto. Esto es útil para depurar problemas o comprender cómo se modifican
+--------los datos con el tiempo.
+
+---- Puedes despachar acciones manualmente desde la interfaz de la extensión.
+
+---- La extensión también puede proporcionar información valiosa sobre el rendimiento
+--------de tu aplicación en relación con el estado.
+
+
+---- Luego de instalar storeDevTools la importamos en nuestro appmodule 
