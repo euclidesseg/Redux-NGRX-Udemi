@@ -33,3 +33,8 @@
 ==== Create reducer =====
 ---- para esta seccion vamos a trabajar con un create reducer, este create reducer ya no trabaja enbase a 
 --- el switch si no a varios operadores de ngrx para hacerlo mas veloz 
+
+==== Store en el componente Hijo ====
+---- crearemos las acciones para permitir multiplicar y dividir sin manadar 
+---- o mutar el dato en cada componente y tampoco mandaremos datos po inputs o outputs 
+---- ya que todo se hara mediante acciones

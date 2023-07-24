@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as actions from './contator/contador.action';
 import { state } from '@angular/animations';
-
-interface Appstate{
-  contador:number;
-}
+import { Appstate } from './app.reducers';
 
 @Component({
   selector: 'app-root',

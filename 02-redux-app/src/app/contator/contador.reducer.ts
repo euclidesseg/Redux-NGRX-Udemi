@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { decrementar, incrementar } from "./contador.action";
+import * as Actions from "./contador.action";
 
 // export function contadorReducer(state: number = 10, action: Action){
 
@@ -19,8 +19,11 @@ export const initialState = 15
 
  const _counterReducer = createReducer(
     initialState,
-    on(incrementar, (state) => state + 1), // resibe una accion y una funcion que define que hara con esa funcion
-    on(decrementar, (state) => state - 1),
+    on( Actions.incrementar, (state) => state + 1 ), // resibe una accion y una funcion que define que hara con esa funcion
+    on( Actions.decrementar, (state) => state - 1 ),
+    on( Actions.multiplicar, (state,{numero}) => state * numero ),
+    on( Actions.dividir, (state,props) => state / props.numero ),
+    on( Actions.reset, (state) => state = initialState ),
   );
 
 // on es una funcion que trabaja con el create reducer y le permite seleccionar mas 
