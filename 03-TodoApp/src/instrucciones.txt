@@ -1,0 +1,13 @@
+==== Creacion De Modelo ====
+---- en nustro componente Todo creamos un directorio llamado models
+---- en esta carpeta estara nuestro modelo para la tareas y se podra ver sus atributos y como estara 
+---- estructurada una tarea
+
+==== Ngrx Instalacion ====
+---- instalamos la libreria en la version que nesecitemos segun sea la version de angular
+
+---- creamos un directorio llamado store que es ahi donde estara implementado 
+---- todo el patron redux
+
+==== Importacion del StoreModule ====
+---- esto es interesante ya que debido a que tenemos un modulo 
