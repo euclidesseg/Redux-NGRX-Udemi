@@ -11,3 +11,15 @@
 
 ==== Importacion del StoreModule ====
 ---- esto es interesante ya que debido a que tenemos un modulo 
+
+==== Definiendo El Appstate ====
+---- antes de poner el appstate instalaremos la herramienta redux devtools 
+---- en nuestra aplicacion para poder ver como cambia el estado
+
+---- Ahoara nuestra aplicacion va a manejar un arreglo de Todos pero en un futuro podemos tener mas cosas 
+---- entonces, para definir nuestro appstate con una interface de como trabajara el estado de Todo
+
+
+==== Construccion del Formcontrol para el input de agregar una tarea ====
+---- como vamos a trabajar con formularios reactivos necesitamos inportar el modulo ReactiveFormsModule 
+---- de angular form

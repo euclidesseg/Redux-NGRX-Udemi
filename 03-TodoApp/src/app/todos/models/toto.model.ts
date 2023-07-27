@@ -7,6 +7,7 @@ export class Todo{
     constructor(texto: string){
         this.texto = texto
         this.id = new Date().getTime(); // me va a obtener una nueva fecha con hora en un formato de numero
+        this.completado = false;
     }
 }
 

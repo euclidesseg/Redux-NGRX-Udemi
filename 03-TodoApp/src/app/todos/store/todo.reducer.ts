@@ -4,11 +4,11 @@ import { Todo } from "../models/toto.model"
 
 // debito a que nuestro estado de tareas va a trabajar con un arreglo de tareas 
 // entonces nuestro estado inicial sera un arreglo vacio de Todo
-export const initialState:Todo[] = []
+export const initialState:Todo[] = [new Todo('Salvar al mundo'),new Todo('Vencer a tanos'),new Todo('Enamorar a guanda'),new Todo('Golpear a hold')]
 
 const _todoReducer = createReducer(
     initialState,
-    on(Actions.crear,(state, props) => [...state, new Todo(props.todo)])
+    on(Actions.crear,(state, props) => [...state, new Todo(props.texto)])
 )
 
 export function totoReducer(state:any, action:Action){

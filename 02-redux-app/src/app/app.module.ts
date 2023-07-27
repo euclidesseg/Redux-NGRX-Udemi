@@ -9,7 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { HijoComponent } from './contator/hijo/hijo.component';
 import { NietoComponent } from './contator/nieto/nieto.component';
-import { environment } from 'src/environment/environment.prod';
+import { environment } from 'src/environment/environment';
 
 @NgModule({
   declarations: [
