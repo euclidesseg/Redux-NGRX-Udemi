@@ -6,9 +6,22 @@ import { Todo } from "../models/toto.model"
 // entonces nuestro estado inicial sera un arreglo vacio de Todo
 export const initialState:Todo[] = [new Todo('Salvar al mundo'),new Todo('Vencer a tanos'),new Todo('Enamorar a guanda'),new Todo('Golpear a hold')]
 
+
 const _todoReducer = createReducer(
     initialState,
-    on(Actions.crear,(state, props) => [...state, new Todo(props.texto)])
+    on(Actions.crear,(state, props) => [...state, new Todo(props.texto)]),
+    on(Actions.toggle,(state, props) =>{
+        return state.map(todo =>{ // ...recorro cada objeto de la lista de tareas (estado actual)
+            if(todo.id === props.id){ // ...verifico que el id que mando a travez de la accion si este en el estado actual
+                return{  // ... utlizo el operador de propagacion para retornar un nuevo objeto que representa la tarea actual esto me garantiza que no mutare el arreglo
+                    ...todo,  // ... agrego las propiedades del objeto a un nuevo objeto
+                    completado: ! todo.completado // .... modifico la propiedade completado del objeto 
+                }
+            }else{
+                return todo // .... si no existe el id retorno el todo 
+            } 
+        })
+    })
 )
 
 export function totoReducer(state:any, action:Action){

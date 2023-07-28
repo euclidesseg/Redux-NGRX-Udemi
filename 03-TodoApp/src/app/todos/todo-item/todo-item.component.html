@@ -9,9 +9,11 @@
   </div>
   <input class="edit" 
   type="text"
-  [formControl]="textInput"
+  [formControl]="textInputEditing"
   #inputFisico
-  (blur)="terminarEdision()"
+  (blur)="terminarEdision()" 
   >
+  <!--   (blur)="terminarEdision()" este evento me quita el foco del input y cuando sucede me activa el evento terminar
+          edicion que a su vez me dispara la accion -->
   <!-- #input es para estableces una referencia -->
 </li>

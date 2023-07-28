@@ -23,3 +23,8 @@
 ==== Construccion del Formcontrol para el input de agregar una tarea ====
 ---- como vamos a trabajar con formularios reactivos necesitamos inportar el modulo ReactiveFormsModule 
 ---- de angular form
+
+
+==== Completa o desmarcar un TODO ====
+---- vamos a  trabajar disparando acciones cuando se activa o se desactiva el chek que nos aparece en la pantalla
+---- y para eso no spodemos suscribir al chek directamente cuando se activa o se desactiva

@@ -6,7 +6,7 @@ export class Todo{
 
     constructor(texto: string){
         this.texto = texto
-        this.id = new Date().getTime(); // me va a obtener una nueva fecha con hora en un formato de numero
+        this.id = Math.floor( Math.random() * (100 + 100000)); // nos generara un id aleatorio para la tarea 
         this.completado = false;
     }
 }
