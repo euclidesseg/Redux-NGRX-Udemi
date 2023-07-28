@@ -19,3 +19,5 @@ export class TodoListComponent implements OnInit {
   }
 
 }
+// el todos que seleccionamos hace referencia al dato que esta en la interfaz TodoAppState mas no al que esta 
+// en el modulo declarado
