@@ -1,4 +1,4 @@
-import { Action, createReducer, on} from "@ngrx/store"
+import { Action, createReducer, on, props} from "@ngrx/store"
 import * as Actions from "./todo.action"
 import { Todo } from "../models/toto.model"
 
@@ -21,7 +21,30 @@ const _todoReducer = createReducer(
                 return todo // .... si no existe el id retorno el todo 
             } 
         })
-    })
+    }),
+
+    on(Actions.editar,(state, props) =>{
+        return state.map(todo =>{ // ...recorro cada objeto de la lista de tareas (estado actual)
+            if(todo.id === props.id){ // ...verifico que el id que mando a travez de la accion si este en el estado actual
+                return{  // ... utlizo el operador de propagacion para retornar un nuevo objeto que representa la tarea actual esto me garantiza que no mutare el arreglo
+                    ...todo,  // ... agrego las propiedades del objeto a un nuevo objeto
+                    texto: props.texto // .... modifico la propiedade completado del objeto 
+                }
+            }else{
+                return todo // .... si no existe el id retorno el todo 
+            } 
+        })
+    }),
+
+    on(Actions.eliminar,(state,props) => state.filter(todo => todo.id != props.id)),
+    on(Actions.toggleAll,(state, props) =>{
+        return state.map((todo) =>{
+            return{
+                ...todo,
+                completado: props.estado
+            }
+        })
+    }),
 )
 
 export function totoReducer(state:any, action:Action){

@@ -28,8 +28,8 @@ export class TodoItemComponent implements OnInit{
   }
   
   ngOnInit(): void {
-    this.chkCompletado = new FormControl(this.todo.completado);
-    this.textInputEditing = new FormControl(this.todo.texto, Validators.required);
+    this.chkCompletado = new FormControl(this.todo.completado); // hace referencia a si esta completado o no
+    this.textInputEditing = new FormControl(this.todo.texto, Validators.required); // hace referenecia el texto que se va  a editar
 
     // completar o desmarcar un TODO mediante accion
     // nos suscribimos a los cambios del chekCompletado
@@ -49,6 +49,13 @@ export class TodoItemComponent implements OnInit{
 
   terminarEdision(){
     this.editando = false;
+    if(this.textInputEditing.invalid){return }
+    if(this.textInputEditing.value == this.todo.texto){return }
+
+    this.store.dispatch(Actions.editar({id:this.todo.id, texto:this.textInputEditing.value}))
   }
 
+  eliminar(){
+    this.store.dispatch(Actions.eliminar({id:this.todo.id}))
+  }
 }
