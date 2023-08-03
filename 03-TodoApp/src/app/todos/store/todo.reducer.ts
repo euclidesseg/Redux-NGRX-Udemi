@@ -2,7 +2,7 @@ import { Action, createReducer, on, props} from "@ngrx/store"
 import * as Actions from "./todo.action"
 import { Todo } from "../models/toto.model"
 
-// debito a que nuestro estado de tareas va a trabajar con un arreglo de tareas 
+// debido a que nuestro estado de tareas va a trabajar con un arreglo de tareas 
 // entonces nuestro estado inicial sera un arreglo vacio de Todo
 export const initialState:Todo[] = [new Todo('Salvar al mundo'),new Todo('Vencer a tanos'),new Todo('Enamorar a guanda'),new Todo('Golpear a hold')]
 

@@ -28,3 +28,8 @@
 ==== Completa o desmarcar un TODO ====
 ---- vamos a  trabajar disparando acciones cuando se activa o se desactiva el chek que nos aparece en la pantalla
 ---- y para eso no spodemos suscribir al chek directamente cuando se activa o se desactiva
+
+
+==== Filtrado ====
+---- Para implementar un filtro bamos a crear otro reducer deform que el estado tenga otro nodo
+---- y para eso vamos a crear un acarpeta llamada filtro
