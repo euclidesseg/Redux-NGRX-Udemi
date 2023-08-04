@@ -1,7 +1,7 @@
 import { createReducer, Action, props, on } from "@ngrx/store"
 import { filtrar, filtrosValidos } from "./filtro.action"
 
-export const initialState:filtrosValidos = 'todos'
+export const initialState:filtrosValidos = 'todas'
 
 const _filtroReducer = createReducer <filtrosValidos, Action>(
     initialState,

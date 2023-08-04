@@ -33,3 +33,25 @@
 ==== Filtrado ====
 ---- Para implementar un filtro bamos a crear otro reducer deform que el estado tenga otro nodo
 ---- y para eso vamos a crear un acarpeta llamada filtro
+
+==== Mas Reducer En el State ====
+---- Ya creamos acciones y un nuevo reducer que maneja los filtros de la aplicacion
+---- pero para que se muestre en la extencion del navegador ese reducer lo debemos agregar
+---- al la configuracion de reducers en nuestro app.module  StoreModule.forRoot({todos:totoReducer}),
+---- podemos agregar el nuevo reducer aqui mismo StoreModule.forRoot({todos:totoReducer, filtro:filtroReducer}),
+---- pero antes de hacer eso mejor configuramos los reducer dentro del app.reducer para posteriormente cargarlos por 
+---- lazyloading entonces vamos a nuestro app.reducers a configurarar el nuevo reducer que hemos creado
+
+---- ahora despues de encadenar todos los reducer en un objeto en la configuracion del app.module
+---- reemplazamos StoreModule.forRoot({todos:totoReducer}), por StoreModule.forRoot({appReducers})
+
+==== cambiar el filtro ====
+---- para cambiar el filtro y mandaar la accion para que modifique el estado del filtro 
+---- seria sencilla tal cual como lo hemos venido haciendo con las demas acciones
+
+==== Aplicar el filtro visual ====
+---- para cambiar el filtro visual nos vamos a crear un pipe para cambiar la informacion visualmente
+
+==== Limpirar Completdas Como tarea ====
+---- para limpiar comletadas lo que hare  sera: crar otra accion en el para el reducer de Todos 
+---- para despacharla desde el componente de footer

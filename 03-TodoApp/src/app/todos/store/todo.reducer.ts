@@ -45,9 +45,11 @@ const _todoReducer = createReducer(
             }
         })
     }),
+    on(Actions.limiparCompletados,state => state.filter((todo) => !todo.completado)),
+
 )
 
-export function totoReducer(state:any, action:Action){
+export function todoReducer(state:any, action:Action){
     return _todoReducer(state,action);
 }
 

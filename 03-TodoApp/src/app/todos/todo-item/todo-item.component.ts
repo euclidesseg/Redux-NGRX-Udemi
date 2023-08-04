@@ -4,7 +4,7 @@ import { FormControl, Validators } from '@angular/forms';
 
 import { Todo } from '../models/toto.model';
 import { Store } from '@ngrx/store';
-import { TodoAppState } from '../interfaces/todo.appstate';
+import { AppState } from '../interfaces/todo.reducers';
 import * as Actions from '../store/todo.action';
 
 @Component({
@@ -23,7 +23,7 @@ export class TodoItemComponent implements OnInit{
   @ViewChild('inputFisico') txtInputFisico!: ElementRef;
 
 
-  constructor(private store: Store<TodoAppState>){
+  constructor(private store: Store<AppState>){
 
   }
   
