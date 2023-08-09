@@ -1,3 +1,5 @@
+npm init para instalar algunos paquetes de node desde el pakage.json.
+
 npm install -g ts-node
 npm install -g typescript
 Instalamos global para correr TS directamente en un proyecto de node 
