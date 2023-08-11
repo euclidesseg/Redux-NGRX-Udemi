@@ -1,0 +1,17 @@
+==== Configurando Rutas Hijas de La aplicacion =====
+---- Rutas hijas de nuestra aplicacion en el navbar 
+---- para hacer el modulo de rutas hijas lo haremos de una forma diferente a lo acostumbrado,
+---- lo haremos sin necesiddad de un nuevo modulo lo que se hare sera lo siguiente :
+---- export const dasborardRoutes:Routes = [
+    {path:'', component:EstadisticaComponent},
+    {path:'ingreso-egreso', component: IngresoEgresoComponent},
+    {path:'detalle', component: DetalleComponent}
+];
+
+---- en nuestro componente de dashboard crearemos una constante que seran todas las rutas que se van a 
+---- manejar en nuestro dashborar component, es decir, las que se van a reenderizar dentro del dashboard
+
+---- este a constante la pondremos en nuestro app.routing.module de la siguiente manera
+---- {path:'', component:DashboardComponent, children:dashborardRoutes},
+---- asi indicamos que al cargarse esta, se va a reenderizar el componente DashboardComponent y dentro
+---- de este DashboardComponent se reenderizara al arreglo de rutas de que hemos creado anteriormente
