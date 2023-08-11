@@ -1,7 +1,7 @@
 // Creamos la accion 
 // una intrefaz simplemente es una regla que le ponemos a los objetos
 
-import { reducer } from "./contador/contador.reducer";
+import { contadorReducer } from "./contador/contador.reducer";
 
 // esta interfaz es tal cual el tipo que le agregamos en la libreria ngrx
 interface Action{
@@ -50,10 +50,10 @@ const dividirAction : Action = {
 };
 
 // usar el reducer
-console.log(reducer(10, incrementadorAction))
-console.log(reducer(10, decrementadorAction))
-console.log(reducer(10, multiplicarAction))
-console.log(reducer(10, dividirAction))
+console.log(contadorReducer(10, incrementadorAction))
+console.log(contadorReducer(10, decrementadorAction))
+console.log(contadorReducer(10, multiplicarAction))
+console.log(contadorReducer(10, dividirAction))
 
 // el reducer siempre recivira el estado actual y la accion
 // la accion recibe un typo que define lo que hara esa accion y un parametro
