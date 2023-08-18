@@ -1,0 +1,10 @@
+
+<div>
+    {{data.type | titlecase}}
+</div>
+<div class="content__message">
+    {{data.message}}
+</div>
+<div class="content__button">
+    <button class="button__action" (click)="snackBarRef.dismiss()">{{data.buttonText}}</button>
+</div>

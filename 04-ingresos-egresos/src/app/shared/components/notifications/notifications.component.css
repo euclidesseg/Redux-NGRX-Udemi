@@ -1,0 +1,25 @@
+.content__message{
+    border:1px solid white ;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 15px 0 15px 0px ;
+}
+
+.content__button{
+    display: flex;
+}
+
+.button__action{
+    color: black; 
+    background-color: rgb(255, 255, 255);
+    transition: .5s;
+    border: none;
+    height: auto;
+    min-height: 35px;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+.button__action:hover{
+    background-color: rgb(236, 230, 230);
+    transition: .5s;
+}

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SnackBarNotificationService } from 'src/app/shared/services/snackbar-notification.service';
 import { ValidatorService } from 'src/app/shared/services/validator.service';
 import { EmailValidatorAsync } from 'src/app/shared/validators/email-validator.service';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +18,10 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fBuilder: FormBuilder,
     private validatorService: ValidatorService,
-    private emailValidator : EmailValidatorAsync
+    private emailValidator : EmailValidatorAsync,
+    private authService: AuthService,
+    private router : Router,
+    private snackBar: SnackBarNotificationService
   ) {
 
   }
@@ -35,7 +41,14 @@ export class RegisterComponent implements OnInit {
       console.log('valido',this.formRegister.valid);
       return;
     }else{
-      console.log(this.formRegister.value);
+      const {name, email, password} = this.formRegister.value
+      this.authService.crearUsuario({nombre:name, email:email, contraseña:password})
+      .then((user) =>{
+        this.snackBar.showNotification('Registro Exitoso!', 'Continuar', 'success')
+        this.router.navigate(['/'])
+      })
+      .catch((error) => console.error(error))
+      this.snackBar.showNotification('Este Correo ya existe', 'Continuar', 'error')
     } 
 
   }

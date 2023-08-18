@@ -15,3 +15,78 @@
 ---- {path:'', component:DashboardComponent, children:dashborardRoutes},
 ---- asi indicamos que al cargarse esta, se va a reenderizar el componente DashboardComponent y dentro
 ---- de este DashboardComponent se reenderizara al arreglo de rutas de que hemos creado anteriormente
+
+==== PREPARAR NUESTRA BASE DE DATOS EN FIREBASE ====
+---- En este capitulo prepararemos nuestra base de datos en firebase para agregar los usuarios, y autenticarnos
+---- en nuestra aplicacion de egresos y egresos.
+---- para esto creare un nuevo proyecto en mi cuenta de euclides2696@.....
+
+---- cremos nuestro proyecto Inreseo Egreso App 
+---- nos vamos a autenticasion y metodos de acceso veremos que podemos usar varias opciones como Gmail, Facebook,
+---- Apple, GitHub entre otras
+---- pero para esta ocacion vamos a trabajar unicamente con correo y contraseña que son metodos nativos.
+
+---- para guardar los usuarios vamos a trabajar con firestore para crear una nueva base de datos
+---- la crearemos en modo de produccion para aceptar solamente a usuarios autenticaods 
+---- para cambiarla lo hacemos en nuestrar reglas de base de datos 
+
+---- service cloud.firestore {
+----  match /databases/{database}/documents {
+----    match /{document=**} ----      allow read, write: if false;
+----      // allow read, write
+----    }
+----  }
+---- }
+
+---- si queremos modificar solo comentamos la linea  allow read, write: if false; y descomentamos 
+---- // allow read, write
+
+==== COMUNICACION DE LA APLICACION CON FIRESTORE ====
+---- Para comunicar angualar con firestore vamos a la documentacion y seguimos las indicaciones
+---- instlamos firestore en nuestro proyecto con: ng add @angular/fire
+
+---- esto nos pedira una atutenticacion con nustra cuenta y nos pedira que seleccionemos las funcionalidades requeridas
+---- nos creara el environment.ts y nos agregara el .firebase y firebase.json
+
+---- luego de decir las funcionalidades el comando nos creara o actualizara un environment.ts
+---- tambien nos creara las importaciones en el appModule y nos importara los modulos correspondientes a las opciones 
+---- que hallamos escogido anteriormente, luego tambien la app se podra crear desde la consola si no esta 
+---- creada en nuestro proyecto
+
+---- en este caso yo agreue auth y firestore para obtener autenticacion y almacenamiento de firestore
+
+==== Modulos
+     import { environment } from '../environments/environment';
+     import {FirestoreModule, provideFirestore,getFirestore} from '@angular/fire/firestore'
+     import { AngularFireModule } from '@angular/fire/compat';
+     import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+==== Imporaciones 
+     // firebase
+         AngularFireModule.initializeApp(environment.firebase),
+         AngularFireAuthModule,
+         FirestoreModule,
+         provideFirebaseApp(() => initializeApp(environment.firebase)),
+         provideAuth(() => getAuth()),
+         provideFirestore(() => getFirestore())
+
+==== Crear nuestor primer Usuario ====
+---- para crear nuestro primer usuario primero nos creamos un servicio que sera injectado en nuestro register.
+---- en el register esta el metodo que hace uso del servicio y manda el formulario 
+---- ahora necesitamos injectar el servicio de AngularFireAuth en el servicio para mandarlo a firestore
+
+
+==== Ahora cuando inciamos secion devemos redireccionar a la pagina de registros y egresos
+---- para lo que importamos angular router
+
+==== La misma dinamica usamos para loguearnos desde el login solo que esta vez usamos siginWithEmailAndPassword
+
+==== Personalizando Mensajes de Error con SnackBar Y Material ====
+---- en primer lugar para realizar estas notificaciones instalamos la libreria angular material
+---- ng add @angular/material he importamos los modulos correspondientes a MatSnackBarModule
+
+---- creamos un nuevo servicio en shared para la ventana emergente de notificacion 
+---- seguido vamos hasta el nuevo servicio y seguimos las indicaciones 
+
+---- desues de configurar el servicio lo injectamos en nuestros componentes que usan formularios
+---- para en caso de error mandar una notificacion
+
