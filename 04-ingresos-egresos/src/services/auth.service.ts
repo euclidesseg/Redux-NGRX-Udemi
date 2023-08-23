@@ -20,7 +20,11 @@ export class AuthService {
 
   }
 
-  SignIn(email: string, password: string) {
+  signIn(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
+  }
+
+  logout(){
+    return this.afAuth.signOut()
   }
 }

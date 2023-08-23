@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit{
 
   constructor(
     private fBuilder : FormBuilder, 
-    private autservice:AuthService, 
+    private authService:AuthService, 
     private router : Router,
     private notification : SnackBarNotificationService){}
 
@@ -26,10 +26,9 @@ export class LoginComponent implements OnInit{
   }
 
   loginUsuario(){
-    console.log('asdfasdfasfasdf')
     if(this.loginForm.invalid) return;
     const {email, password} = this.loginForm.value;
-    this.autservice.SignIn(email,password)
+    this.authService.signIn(email,password)
     .then((user) =>{
       console.log(user)
       this.router.navigate(['/'])

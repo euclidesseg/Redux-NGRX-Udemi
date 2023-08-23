@@ -81,6 +81,8 @@
 ==== La misma dinamica usamos para loguearnos desde el login solo que esta vez usamos siginWithEmailAndPassword
 
 ==== Personalizando Mensajes de Error con SnackBar Y Material ====
+==== cabe mensionar que tambien podriamos hacerlo con sweetalert2
+
 ---- en primer lugar para realizar estas notificaciones instalamos la libreria angular material
 ---- ng add @angular/material he importamos los modulos correspondientes a MatSnackBarModule
 
@@ -89,4 +91,6 @@
 
 ---- desues de configurar el servicio lo injectamos en nuestros componentes que usan formularios
 ---- para en caso de error mandar una notificacion
+
+==== LOGOUT DE LA APLICACION ====
 

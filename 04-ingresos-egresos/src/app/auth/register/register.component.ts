@@ -44,11 +44,12 @@ export class RegisterComponent implements OnInit {
       const {name, email, password} = this.formRegister.value
       this.authService.crearUsuario({nombre:name, email:email, contraseña:password})
       .then((user) =>{
-        this.snackBar.showNotification('Registro Exitoso!', 'Continuar', 'success')
-        this.router.navigate(['/'])
+          this.router.navigate(['/'])
       })
-      .catch((error) => console.error(error))
-      this.snackBar.showNotification('Este Correo ya existe', 'Continuar', 'error')
+      .catch(error =>{
+        console.error(error.message)
+        this.snackBar.showNotification(error.message, 'Continuar', 'error')
+      })
     } 
 
   }

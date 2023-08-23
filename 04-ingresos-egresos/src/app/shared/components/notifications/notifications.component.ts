@@ -13,6 +13,6 @@ export class NotificationsComponent implements OnInit{
   ){}
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 }
