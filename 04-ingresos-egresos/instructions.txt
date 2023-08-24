@@ -94,3 +94,20 @@
 
 ==== LOGOUT DE LA APLICACION ====
 
+
+==== OBTENER INFORMACION DEL USUARIO ACTIVO EN FIREBASE ====
+---- A continuacion vamos a obtener la informacion de cuando el usuario se conecta y se desconecta de firebase
+---- vallamos a nuestro servicio para agregar el metoo init AuthListener
+
+==== GUARD PARA PROTECCION DE RUTAS ====
+---- construimos el guard qu enecesitamos y lo aplicamos a la ruta de DashBoardComponent
+
+---- luego de eso vamos hasta nuestro servicio a crear un metodo con las validaciones que retorna firebase
+
+==== Crear documentos de Base de Datos Para Cada Usuario ====
+---- Lo que haremos en esta ocacion sera agregar informacion para cada usuario tal como egresos e ingresos 
+---- con un documento el cual tenga user nombre y correo de usuario
+---- nos creamos un modelo de usuario
+
+---- despues de que creamos la interfaz nos vamos hasta nuestro servicio a agregar estos datos en 
+---- el metodo de crear usuario

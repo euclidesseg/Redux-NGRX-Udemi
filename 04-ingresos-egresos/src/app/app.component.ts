@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { map } from 'rxjs';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ingresos-egresos';
+  constructor(private authService: AuthService, private ruter : Router){
+    this.authService.initAuthListener().pipe(
+      map(fbUser =>{
+        if(!fbUser){
+          this.ruter.navigate(['/auth'])
+        }
+      })
+    )
+  }
 }
