@@ -23,6 +23,7 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NotificationsComponent } from './shared/components/notifications/notifications.component';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { NotificationsComponent } from './shared/components/notifications/notifi
     FirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

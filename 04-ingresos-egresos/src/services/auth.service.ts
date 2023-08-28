@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 
 // firebase
+// import {
+//   AngularFirestoreDocument
+// } from '@angular/fire/compat/firestore';
+import 'firebase/firestore'
+import * as Firebase from '@angular/fire/firestore'
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import * as auth from 'firebase/auth';
+import { Firestore, FirestoreDataConverter } from '@angular/fire/firestore';
 import { map, of } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario.model';
 
@@ -11,21 +16,25 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth, private firestore: Firestore) { }
 
   crearUsuario(usuario: { nombre: string, email: string, contraseña: string }) {
-
     const { nombre, email, contraseña } = usuario;
     console.log({ nombre, email, contraseña });
 
     return this.afAuth.createUserWithEmailAndPassword(email, contraseña)
        // mandamos el documento para un usuario
        .then(fbUser =>{
+        const userRef:any = Firebase.doc(this.firestore,
+          `${fbUser.user?.uid}/usuario`
+        )
+
          const usuario:Usuario = {
           uid: fbUser.user?.uid || '',
           nombre: nombre,
           email: email
         }
+        this.SetUserData(usuario, userRef)
        })
 
   }
@@ -44,6 +53,16 @@ export class AuthService {
   initAuthListener() {
     return this.afAuth.authState
   }
+
+
+
+  
+  SetUserData(userData: any, url: any) {
+    return url.set(userData, {
+      merge: true,
+    });
+  }
+
 
   // este metodo indica si el usuario esta logueado o si hay un usuario logueado esto me sive para implementar el gard
   isAuth(){
