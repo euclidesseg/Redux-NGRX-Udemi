@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 import 'firebase/firestore'
 import * as Firebase from '@angular/fire/firestore'
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Firestore, FirestoreDataConverter } from '@angular/fire/firestore';
+import { Firestore, AngularFirestore } from '@angular/fire/firestore';
 import { map, of } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario.model';
 
@@ -16,7 +16,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth, private firestore: Firestore) { }
+  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) { }
 
   crearUsuario(usuario: { nombre: string, email: string, contraseña: string }) {
     const { nombre, email, contraseña } = usuario;
@@ -33,7 +33,7 @@ export class AuthService {
           uid: fbUser.user?.uid || '',
           nombre: nombre,
           email: email
-        }
+        }                                                                                                                                                                                                                                                                                                             
         this.SetUserData(usuario, userRef)
        })
 
